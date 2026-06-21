@@ -20,16 +20,27 @@ In seguito, proveremo a potenziare il nostro modello affiancando alla variabile 
 Iniziamo caricando i pacchetti necessari per la nostra ricerca e calcolando le statistiche descrittive del nostro dataset:\
 
 ```{r}
+install.packages("MASS")
+install.packages("ISLR2")
+install.packages("ggplot2")
+install.packages("reshape2")
+install.packages("corrplot")
+install.packages("psych")
+```
+
+
+```{r}
 library(MASS)
 library(ISLR2)
 library(ggplot2)
 library(reshape2)
 library(corrplot)
+library(psych)
 ```
 
 
 ```{r}
-boston <- read.csv("/Users/jacopo/Desktop/Modelli Statistici/Boston.csv")
+boston <- read.csv("Boston.csv")
 head(boston)
 summary(boston)
 psych::describe(boston)
@@ -46,7 +57,7 @@ corrplot(cor(boston), method = "square")
 ```
 
 Dal calcolo della regressione lineare semplice risulta che l'intercetta β₀ è uguale a -34.671 e che il regressore β₁ aumenta di 9.102 per ogni unità di x. Ne deriva che il modello di regressione lineare semplice sarà rappresentato dalla formula:\
-$$ŷ = -39.671 + 9.102x$$
+$$ŷ = -34.671 + 9.102x$$
 
 Si tratta ovviamente di un valore indicativo, considerato che non esistono abitazioni senza stanze e che, in media, una casa a Boston ha circa sei stanze al suo interno (mean = 6.284634). Dal valore dell'indice R² notiamo che il modello riesce a spiegare solo il 48% della variabilità del prezzo mediano, lasciando intendere che quest'ultimo potrebbe essere influenzato da altre osservazioni. Il grafico ci aiuta a visualizzare la correlazione tra le variabili, compreso il prezzo mediano e il numero di stanze per abitazione, che risulta, da un primo punto di vista, la correlazione positiva più forte.\
 
