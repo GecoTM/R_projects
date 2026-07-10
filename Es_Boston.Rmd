@@ -3,8 +3,8 @@ title: "Analisi del dataset Boston sulla variabilità del prezzo mediano"
 author: "Jacopo Timo"
 date: "2025-06-06"
 output:
-  word_document: default
   pdf_document: default
+  word_document: default
   html_document: default
 ---
 
